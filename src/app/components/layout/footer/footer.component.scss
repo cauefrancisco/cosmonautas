@@ -1,0 +1,15 @@
+@import '/src/styles/main.scss';
+
+main{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 5vh;
+  height: 100%;
+
+    p{
+      font-size: 1vw;
+    }
+}

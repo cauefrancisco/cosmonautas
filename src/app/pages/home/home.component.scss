@@ -1,0 +1,183 @@
+@import '/src/styles/main.scss';
+
+main{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-height: 100vh;
+  height: 100%;
+  font-family: 'Shadows Into Light', cursive;
+    // max-width: 95vw;
+  // background-color: black;
+  // box-shadow: 1px -2px 6px 1px $bg-menu;
+
+  @media (max-width: 480px){
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .sec-container{
+    min-height: 90vh;
+    height: 100%;
+    margin-top: 2vh;
+  }
+
+  .schedule{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    border-right: 1px solid white;
+    background-image: url('/assets/imgs/tarot-hand.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.9;
+    cursor: pointer;
+    border-radius: 0 0 50% 0;
+
+    &:hover{
+      opacity: 1;
+      background-image: none;
+      // background-color: gray;
+      background-image: url('/assets/imgs/tarot-hand.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      opacity: 1;
+    }
+
+    @media (max-width: 480px){
+      display: flex;
+      flex-direction: row;
+      height: 50vh;
+      width: 100%;
+      background-image: url('/assets/imgs/tarot-hand.jpg');
+      opacity: 1;
+      border-bottom: 1px solid white;
+      border-right: 0;
+      border-radius: 0;
+
+    }
+
+    .text-schedule{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      // border: 1px solid $sun-yellow;
+      background-color: black;
+      opacity: 0.7;
+      width: 70%;
+      height: 35%;
+      border-radius: 0 0 50% 0;
+
+        
+      &:hover{
+        // opacity: 1;
+        width: 60%;
+        height: 30%;
+        font-weight: 800;
+        h1{
+          font-size: 5vw;
+        }
+      }
+
+      h1{
+        font-size: 6vw;
+        text-shadow: 5px 5px black;
+      }
+
+      @media (max-width: 480px){
+        padding: 10vw;
+      } 
+    }
+  }
+
+  .about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    border-left: 1px solid white;
+    cursor: pointer;
+    background-image: url('/assets/imgs/abstract.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: black;
+    opacity: 0.9;
+    border-radius: 0 0 0 50%;
+
+    &:hover{
+      background-image: none;
+      background-image: url('/assets/imgs/abstract.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      opacity: 1;
+    }
+
+    @media (max-width: 480px){
+      display: flex;
+      flex-direction: row;
+      height: 50vh;
+      width: 100%;
+      opacity: 1;
+      border-top: 1px solid white;
+      border-left: 0;
+      // border-radius: 50% 50% 0 0;
+      border-radius:  0;
+    }
+
+    .text-about{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      // border: 1px solid $sweet-blue;
+      background-color: black;
+      opacity: 0.8;
+      width: 70%;
+      height: 35%;
+      border-radius: 0 0 0 50%;
+
+        &:hover{
+          width: 60%;
+          height: 30%;
+          opacity: 1;
+            h1{
+              font-size: 5vw;
+            }
+        }
+
+      h1{
+        font-size: 6vw;
+        text-shadow: 2px 2px black;
+      }
+      span{
+        font-size: 4vw;
+      }
+
+      @media (max-width: 480px){
+        padding: 10vw;
+        span{
+          font-size: 5vw;
+        }
+      } 
+    }
+  }
+
+.article{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+}
