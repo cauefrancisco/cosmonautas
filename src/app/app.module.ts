@@ -37,7 +37,6 @@ import { CreatePostComponent } from './pages/home/components/create-post/create-
     IntroComponent,
     LoginComponent,
     CreatePostComponent,
-
   ],
   imports: [
     BrowserModule,

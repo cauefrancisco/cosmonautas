@@ -1,13 +1,12 @@
 @import '../../../../styles/main.scss';
 
 app-footer{
-  bottom: 0;
   display: flex;
   justify-content: center;
 
   @media (max-width: 480px){
     position: relative;
-    top: 80%;
+    top: 100%;
     display: flex;
     justify-content: center;
   }

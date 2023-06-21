@@ -2,10 +2,9 @@
 
 main{
   margin: 0 auto;
-  overflow: hidden;
   max-height: 14vh;
-  padding: 1rem;
-  position: fixed;
+  padding: 0.5rem;
+  // position: fixed;
   min-width: 100%;
   max-width: 100vw;
   z-index: 1;
@@ -35,11 +34,7 @@ main{
     color: $sweet-blue;
   }
 
-  // span{
-  //   color: $sun-yellow;
-  // }
-
-        @media (max-width: 480px){
+     @media (max-width: 480px){
           h1{
             color: black;
             font-weight: 800;
@@ -68,10 +63,4 @@ main{
       }
     }
   }
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
 }
