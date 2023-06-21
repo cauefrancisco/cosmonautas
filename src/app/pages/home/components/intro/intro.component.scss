@@ -3,11 +3,11 @@
 .box{
   display: flex;
   flex-direction: column;
-  max-width: 90vw;
-  max-height: 90vh;
-  background-color: lightblue;
-  border-radius: 2%;
+  width: 90vw;
+  background-color: bisque;
+  border-radius: 5px;
   border: 1px solid black;
   text-align: center;
   padding: 1rem;
+  margin: 2vh 0;
 }

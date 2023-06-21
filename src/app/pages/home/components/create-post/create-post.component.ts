@@ -42,7 +42,10 @@ export class CreatePostComponent implements OnInit {
       text: String(this.F_content.value),
       img: String(this.F_img.value),
     }
-    this._postService.addPost(payload);
+    this._postService.createPost(payload).then((res) => {
+      console.log(res);
+    });
+
   }
 
 }

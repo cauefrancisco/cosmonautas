@@ -1,4 +1,24 @@
-<div *ngIf="data.length > 0" class="row box">
-  <h2 *ngFor="let item of title">{{item}}</h2>
-  <p *ngFor="let item of content">{{item}}</p>
-</div>
+<section>
+
+  <article *ngFor="let item of data | paginate
+  : {
+      itemsPerPage: tableSize,
+      currentPage: page,
+      totalItems: count
+    };
+let i = index" class="row box p-2">
+
+    <h2>{{item.title}}</h2>
+    <p>{{item.text}}</p>
+  </article>
+
+
+  <div class="d-flex justify-content-center">
+    <pagination-controls
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="onTableDataChange($event)">
+    </pagination-controls>
+  </div>
+
+</section>

@@ -5,8 +5,8 @@
     "ng": "ng",
     "start": "ng serve --port 3000 --open",
     "build": "ng build",
-    "build:dev": "ng build --configuration=dev",
-    "watch": "ng build --watch --configuration dev",
+    "build:dev": "ng build --configuration=development",
+    "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
@@ -24,6 +24,7 @@
     "@angular/router": "^15.1.0",
     "bootstrap": "^5.3.0",
     "firebase": "^9.22.2",
+    "ngx-pagination": "^6.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

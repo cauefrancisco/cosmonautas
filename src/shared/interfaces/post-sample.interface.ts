@@ -4,4 +4,5 @@ export interface IPostSample {
   img: string;
   description?: string;
   text: string;
+  id?: string;
 }

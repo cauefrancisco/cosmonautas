@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { IPostSample } from 'src/shared/interfaces/post-sample.interface';
 
 
@@ -9,17 +10,19 @@ export class PostsService {
   public posts: Array<IPostSample>;
 
   constructor(
+    private _afs: AngularFirestore,
   ) {
     this.posts = []
   }
 
 
-  public addPost(payload: IPostSample) {
-    this.posts.push(payload)
-    console.log(this.posts);
+  public createPost(post: IPostSample) {
+    post.id = this._afs.createId();
+    return this._afs.collection('posts').add(post);
+    // this.posts.push(post);
   }
 
-  public getPosts(): Array<IPostSample> {
-    return this.posts;
+  public getPosts() {
+    return this._afs.collection('posts').snapshotChanges();
   }
 }

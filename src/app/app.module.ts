@@ -4,9 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { AppComponent } from 'src/app/app.component';
 import { FooterComponent } from 'src/app/components/layout/footer/footer.component';
@@ -42,11 +45,13 @@ import { CreatePostComponent } from './pages/home/components/create-post/create-
     BrowserAnimationsModule,
     RouterModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    // provideFirestore(() => getFirestore()),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     MaterialModule,
     ReactiveFormsModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
