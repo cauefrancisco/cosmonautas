@@ -1,0 +1,13 @@
+@import '/src/styles/main.scss';
+
+.box{
+  display: flex;
+  flex-direction: column;
+  max-width: 90vw;
+  max-height: 90vh;
+  background-color: lightblue;
+  border-radius: 2%;
+  border: 1px solid black;
+  text-align: center;
+  padding: 1rem;
+}

@@ -1,0 +1,36 @@
+<main>
+  <form [formGroup]="form">
+
+    <h1 class="mb-3">Criar post</h1>
+
+    <div class="row container-login">
+
+      <mat-form-field class="col-xl-12 col-md-12 col-12">
+        <mat-label>Titulo</mat-label>
+        <input matInput formControlName="title">
+        <!-- <mat-error *ngIf="F_email.invalid">{{getErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+
+      <mat-form-field class="col-xl-12 col-md-12 col-12 mt-2">
+        <mat-label></mat-label>
+        <textarea matInput formControlName="content"></textarea>
+        <!-- <mat-error *ngIf="F_password.invalid">{{getErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+
+    </div>
+
+  </form>
+
+  <div class="row mt-3 w-25">
+
+    <div class="col-xl-6 col-md-6 col-12 p-1">
+      <button class="w-100 btn-back" (click)="goTo('home')">Voltar</button>
+    </div>
+
+    <div class="col-xl-6 col-md-6 col-12 p-1">
+      <button type="button" class="w-100 btn-confirm" (click)="createPost()">Confirmar</button>
+    </div>
+
+  </div>
+
+</main>

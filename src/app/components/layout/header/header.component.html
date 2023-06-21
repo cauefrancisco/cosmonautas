@@ -18,9 +18,23 @@
       </ul>
     </div> -->
   </div>
-  <div class="login">
-    <span class="material-symbols-outlined">
+  <div *ngIf="!isLogged" class="login">
+    <span class="material-symbols-outlined" (click)="goTo('auth/login')">
       login
     </span>
+    <span class="material-symbols-outlined" (click)="goTo('create')">
+      add
+    </span>
   </div>
+  <div *ngIf="isLogged" class="login">
+    <span class="material-symbols-outlined" (click)="logout()">
+      done
+    </span>
+  </div>
+  <!-- <div class="login">
+    <span class="material-symbols-outlined" (click)="logout()">
+      add
+    </span>
+  </div> -->
+
 </main>

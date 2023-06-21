@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from 'src/app/app-routing.module';
@@ -14,8 +15,11 @@ import { MainLayoutComponent } from 'src/app/components/layout/main-layout/main-
 import { AboutComponent } from 'src/app/pages/about/about.component';
 import { IntroComponent } from 'src/app/pages/home/components/intro/intro.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
+import { LoginComponent } from 'src/app/pages/login/login.component';
 import { ScheduleComponent } from 'src/app/pages/schedule/schedule.component';
+import { MaterialModule } from 'src/core/modules/material/material.module';
 import { environment } from 'src/environments/environment';
+import { CreatePostComponent } from './pages/home/components/create-post/create-post.component';
 
 
 @NgModule({
@@ -27,7 +31,10 @@ import { environment } from 'src/environments/environment';
     HomeComponent,
     AboutComponent,
     ScheduleComponent,
-    IntroComponent
+    IntroComponent,
+    LoginComponent,
+    CreatePostComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -38,6 +45,8 @@ import { environment } from 'src/environments/environment';
     // provideFirestore(() => getFirestore()),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    MaterialModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

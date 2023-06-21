@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/core/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,24 +10,26 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   public navbar = document.getElementById("navbar");
-  public sticky: any;
+  public isLogged: any;
 
 
-  constructor() {
-    this.sticky = this.navbar?.offsetTop;
+  constructor(
+    private _router: Router,
+    private _authService: AuthService,
+  ) {
     this.navbar = document.getElementById("navbar");
   }
 
   ngOnInit() {
-    window.onscroll = this.stickyBar();
+    // this._authService.currentAuthStatus.subscribe((authStatus: any) => this.isLogged = authStatus)
+    // console.log(this.isLogged, 'isLoogged')
   }
 
-  public stickyBar(): any {
-    if (window.scrollY >= this.sticky) {
-      this.navbar?.classList.add("sticky")
-    } else {
-      this.navbar?.classList.remove("sticky");
-    }
+  public goTo(page: string): void {
+    this._router.navigateByUrl(page);
   }
 
+  public logout() {
+    this._authService.logout();
+  }
 }
