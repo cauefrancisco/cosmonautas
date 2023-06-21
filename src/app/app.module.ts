@@ -22,6 +22,7 @@ import { LoginComponent } from 'src/app/pages/login/login.component';
 import { ScheduleComponent } from 'src/app/pages/schedule/schedule.component';
 import { MaterialModule } from 'src/core/modules/material/material.module';
 import { environment } from 'src/environments/environment';
+import { BlogComponent } from './pages/blog/blog.component';
 import { CreatePostComponent } from './pages/home/components/create-post/create-post.component';
 
 
@@ -37,6 +38,7 @@ import { CreatePostComponent } from './pages/home/components/create-post/create-
     IntroComponent,
     LoginComponent,
     CreatePostComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,

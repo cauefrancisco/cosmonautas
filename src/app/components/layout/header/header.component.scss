@@ -4,7 +4,7 @@ main{
   margin: 0 auto;
   max-height: 14vh;
   padding: 0.5rem;
-  // position: fixed;
+  position: fixed;
   min-width: 100%;
   max-width: 100vw;
   z-index: 1;
@@ -18,12 +18,16 @@ main{
     background-color: white;
   }
 
+  .bg{
+    cursor: pointer;
+  }
+
   div{
   display: flex;
   max-height: 12vh;
   max-width: 100%;
   margin: 0;
-  padding: 0;
+  padding-top: 1vh;
   align-items: center;
   justify-content: center;
   
@@ -32,17 +36,17 @@ main{
     font-weight: 800;
     letter-spacing: 1vw;
     color: $sweet-blue;
+    margin: 0 !important;
   }
 
      @media (max-width: 480px){
-          h1{
+        h1{
             color: black;
             font-weight: 800;
             color: $sweet-blue;
             
-          }
         }
-
+      }
   }
 
   .login{
@@ -51,6 +55,7 @@ main{
     width: 100%;
     justify-content: end;
     align-items: end;
+    padding: 0;
     span{
       cursor: pointer;
       font-size: 2rem;
