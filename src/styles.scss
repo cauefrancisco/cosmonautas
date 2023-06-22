@@ -2,10 +2,16 @@
 @import './styles/main.scss';
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-htm, body{
+
+html, 
+body{
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Shadows Into Light', cursive, "Helvetica Neue", sans-serif;
+}
 
+.mat-h1, .mat-headline-5, .mat-typography .mat-h1, .mat-typography .mat-headline-5, .mat-typography h1 {
+  font-family: 'Shadows Into Light', cursive, "Helvetica Neue", sans-serif;
+  margin: 0;
 }

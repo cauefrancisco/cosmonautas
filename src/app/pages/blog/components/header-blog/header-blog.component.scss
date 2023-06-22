@@ -1,0 +1,22 @@
+@import '/src/styles/main.scss';
+
+  .menu-header{
+    width: 100%;
+    border: 1px solid black;
+
+    .menu-content{
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+
+      ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1vw;
+        justify-content: space-evenly;
+        list-style: none;
+      }
+    }
+    
+  }

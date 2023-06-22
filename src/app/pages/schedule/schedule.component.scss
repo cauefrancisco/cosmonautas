@@ -1,0 +1,22 @@
+:host {
+  .menu-header{
+    width: 100%;
+    height: 20vh;
+    margin-top: 20vh;
+    background-color: red;
+  
+    .navigation{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  
+      ul{
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+      }
+    }
+  }
+}
+    

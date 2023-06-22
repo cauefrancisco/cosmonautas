@@ -3,15 +3,15 @@ import { PostsService } from 'src/core/services/posts.service';
 import { IPostSample } from 'src/shared/interfaces/post-sample.interface';
 
 @Component({
-  selector: 'app-intro',
-  templateUrl: './intro.component.html',
-  styleUrls: ['./intro.component.scss']
+  selector: 'app-post-sample',
+  templateUrl: './post-sample.component.html',
+  styleUrls: ['./post-sample.component.scss']
 })
-export class IntroComponent implements OnInit {
+export class PostSampleComponent implements OnInit {
   public data: IPostSample[] = []
   page: number = 1;
   count: number = 0;
-  tableSize: number = 2;
+  tableSize: number = 6;
   tableSizes: any = [3, 6, 9, 12];
 
   constructor(
@@ -47,6 +47,5 @@ export class IntroComponent implements OnInit {
     this.page = 1;
     this.getPosts();
   }
-
 
 }

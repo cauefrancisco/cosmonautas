@@ -1,6 +1,6 @@
 @import '/src/styles/main.scss';
 
-main{
+.home-container{
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -18,7 +18,7 @@ main{
     min-height: 90vh;
     display: flex;
     justify-content: center;
-    margin: 10vh;
+    margin: 0 15vh;
 
     @media (max-width: 480px) {
       margin: 10vh 0 0 0;

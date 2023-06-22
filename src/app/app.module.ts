@@ -20,13 +20,14 @@ import { FooterComponent } from 'src/app/components/layout/footer/footer.compone
 import { HeaderComponent } from 'src/app/components/layout/header/header.component';
 import { MainLayoutComponent } from 'src/app/components/layout/main-layout/main-layout.component';
 import { AboutComponent } from 'src/app/pages/about/about.component';
-import { IntroComponent } from 'src/app/pages/home/components/intro/intro.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { LoginComponent } from 'src/app/pages/login/login.component';
 import { ScheduleComponent } from 'src/app/pages/schedule/schedule.component';
 import { MaterialModule } from 'src/core/modules/material/material.module';
 import { environment } from 'src/environments/environment';
 import { BlogComponent } from './pages/blog/blog.component';
+import { HeaderBlogComponent } from './pages/blog/components/header-blog/header-blog.component';
+import { PostSampleComponent } from './pages/blog/components/post-sample/post-sample.component';
 import { CreatePostComponent } from './pages/home/components/create-post/create-post.component';
 
 
@@ -41,10 +42,11 @@ import { CreatePostComponent } from './pages/home/components/create-post/create-
     HomeComponent,
     AboutComponent,
     ScheduleComponent,
-    IntroComponent,
     LoginComponent,
     CreatePostComponent,
     BlogComponent,
+    HeaderBlogComponent,
+    PostSampleComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+@import '/src/styles/main.scss';
+
+.bar{
+  width: 100%;
+  height: auto;
+}
+
+app-post-sample{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin: 0 auto;
+}

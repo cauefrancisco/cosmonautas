@@ -1,0 +1,52 @@
+@import '/src/styles/main.scss';
+
+.container-article{
+  margin: 2vh 5vw;
+  gap: 2rem;
+  flex-wrap: wrap;
+  // cursor: pointer;
+}
+
+.box{
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid black;
+  text-align: center;
+  height: fit-content;
+  min-height: 50vh;
+  max-height: 100vh;
+  max-block-size: 70vh;
+  box-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.5);
+
+  .img-container{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 20vh;
+  }
+
+  .title{
+    margin-bottom: 2vh;
+  }
+
+  .description{
+    margin-bottom: 2vh;
+
+    p{
+      margin: 0 0 12px;
+      /* inline-size: initial; */
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 15ch;
+      overflow: hidden;
+      word-wrap: break-word;
+    }  
+
+  }
+ 
+  span{
+    top: 0;
+    cursor: pointer;
+  }
+}
