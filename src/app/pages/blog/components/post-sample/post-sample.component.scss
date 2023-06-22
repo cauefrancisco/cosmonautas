@@ -20,11 +20,15 @@
   max-block-size: 70vh;
   box-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.5);
 
+  @media (max-width: 480px) {
+    margin: 0;
+  }
+
   .img-container{
     background-repeat: no-repeat;
     background-attachment: unset  ;
     background-size: cover;
-    min-height: 20vh;
+    min-height: 40vh;
   }
 
   .title{
