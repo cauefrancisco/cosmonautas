@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Editor } from 'ngx-editor';
 import { PostsService } from 'src/core/services/posts.service';
 
 @Component({
@@ -8,9 +9,13 @@ import { PostsService } from 'src/core/services/posts.service';
   templateUrl: './create-post.component.html',
   styleUrls: ['./create-post.component.scss']
 })
-export class CreatePostComponent implements OnInit {
+export class CreatePostComponent implements OnInit, OnDestroy {
   public form: FormGroup;
   public formError: any;
+
+  public editor: Editor;
+  public html!: 'Hello world';
+
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -20,8 +25,11 @@ export class CreatePostComponent implements OnInit {
     this.form = this._formBuilder.group({
       title: ['', [Validators.required]],
       content: ['', [Validators.required]],
+      description: ['', [Validators.required]],
       img: ['', []]
     })
+
+    this.editor = new Editor();
   }
 
   public get F_title(): AbstractControl { return this.form.get('title') as AbstractControl; }
@@ -29,6 +37,11 @@ export class CreatePostComponent implements OnInit {
   public get F_img(): AbstractControl { return this.form.get('img') as AbstractControl; }
 
   ngOnInit() {
+  }
+
+  // make sure to destory the editor
+  ngOnDestroy(): void {
+    this.editor.destroy();
   }
 
 

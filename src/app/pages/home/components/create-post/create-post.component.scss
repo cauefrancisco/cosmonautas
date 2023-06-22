@@ -21,7 +21,7 @@ form{
   display: flex;
   justify-content: center;
   align-items: center;
-  // width: 45vw;
+  max-width: 90vw;
 }
 
 .btn-confirm{
@@ -38,4 +38,9 @@ form{
     color: black;
     background: gray;
     border: none;
+}
+
+.write{
+  max-width: 90vw;
+  min-height: 30vh;
 }
