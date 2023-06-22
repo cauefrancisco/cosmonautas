@@ -13,6 +13,7 @@ export class PostSampleComponent implements OnInit {
   count: number = 0;
   tableSize: number = 6;
   tableSizes: any = [3, 6, 9, 12];
+  imgPost: string = '/assets/imgs/cartoon-cards-playing.png';
 
   constructor(
     private _postService: PostsService,

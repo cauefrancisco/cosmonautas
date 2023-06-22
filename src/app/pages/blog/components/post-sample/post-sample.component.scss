@@ -14,14 +14,15 @@
   border: 1px solid black;
   text-align: center;
   height: fit-content;
-  min-height: 50vh;
+  min-height: 70vh;
   max-height: 100vh;
+  padding: 0 !important;
   max-block-size: 70vh;
   box-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.5);
 
   .img-container{
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: unset  ;
     background-size: cover;
     min-height: 20vh;
   }
@@ -48,5 +49,6 @@
   span{
     top: 0;
     cursor: pointer;
+    padding: 1vh;
   }
 }

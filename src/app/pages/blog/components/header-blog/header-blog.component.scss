@@ -3,11 +3,13 @@
   .menu-header{
     width: 100%;
     border: 1px solid black;
+    margin-top: 5vh;
 
     .menu-content{
       display: flex;
       justify-content: center;
       align-items: baseline;
+      margin: 0 5vw;
 
       ul{
         display: flex;
