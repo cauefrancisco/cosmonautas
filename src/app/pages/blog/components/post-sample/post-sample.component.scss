@@ -10,15 +10,21 @@
 .box{
   display: flex;
   flex-direction: column;
-  border-radius: 5px;
-  border: 1px solid black;
+  border-radius: 10px;
+  // border: 1px solid black;
   text-align: center;
   height: fit-content;
-  min-height: 70vh;
+  min-height: 61vh;
   max-height: 100vh;
   padding: 0 !important;
   max-block-size: 70vh;
-  box-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 20px 1px  rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+
+  &:hover{
+    position: relative;
+    top: 2vh;
+  }
 
   @media (max-width: 480px) {
     margin: 0;
@@ -29,21 +35,27 @@
     background-attachment: unset  ;
     background-size: cover;
     min-height: 40vh;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
   }
 
   .title{
-    margin-bottom: 2vh;
+    margin: 0.5vh 0;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    min-height: 12vh;
   }
 
   .description{
-    margin-bottom: 2vh;
+    margin-bottom: 0.5vh;
 
     p{
       margin: 0 0 12px;
       /* inline-size: initial; */
       text-overflow: ellipsis;
       white-space: nowrap;
-      max-width: 15ch;
+      max-width: 100ch;
       overflow: hidden;
       word-wrap: break-word;
     }  

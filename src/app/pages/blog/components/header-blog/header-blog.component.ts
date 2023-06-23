@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-blog',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-blog.component.scss']
 })
 export class HeaderBlogComponent implements OnInit {
+  public isMenuOpen: boolean = false
 
-  constructor() { }
+  constructor(
+    private _router: Router,
+  ) { }
 
   ngOnInit() {
   }
 
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen
+  }
+
+  public goTo(page: string): void {
+    this._router.navigateByUrl(page)
+  }
 }

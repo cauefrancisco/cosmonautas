@@ -37,6 +37,25 @@
         gap: 1vw;
         justify-content: space-evenly;
         list-style: none;
+
+        @media (max-width: 480px) {
+         display: none;
+
+         &.is-open{
+          display: block;
+          position: absolute;
+          margin: 0.5vh 0;
+          padding: 1rem;
+          /* top: 52px; */
+          /* width: 100%; */
+          background: white;
+
+            li{
+              padding: 1rem;
+              border-bottom: 1px solid $sweet-blue;
+            }
+         }
+        }
       }
     }
     

@@ -2,11 +2,17 @@
   <div class="row menu-content">
 
     <div class="col-xl-12 col-md-12 col-12">
-      <span class="material-symbols-outlined hamburger">
-        menu
+
+      <span class="material-symbols-outlined hamburger" (click)="toggleMenu()">
+        {{ isMenuOpen ? 'close' : 'menu' }}
       </span>
 
-      <ul>
+      <ul [class.is-open]="isMenuOpen">
+        <li><button mat-mini-fab
+            matTooltip="Home"
+            (click)="goTo('home')">
+            <mat-icon>home</mat-icon>
+          </button></li>
         <li>Arcanos</li>
         <li>Espiritualidade</li>
         <li>Auto-conhecimento</li>

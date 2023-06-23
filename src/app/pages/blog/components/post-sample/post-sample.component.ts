@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PostsService } from 'src/core/services/posts.service';
 import { IPostSample } from 'src/shared/interfaces/post-sample.interface';
 
@@ -13,10 +14,11 @@ export class PostSampleComponent implements OnInit {
   count: number = 0;
   tableSize: number = 6;
   tableSizes: any = [3, 6, 9, 12];
-  imgPost: string = '/assets/imgs/cartoon-cards-playing.png';
+  imgPost: string = '/assets/imgs/tarot-post.jpg';
 
   constructor(
     private _postService: PostsService,
+    private _router: Router,
   ) {
 
   }
@@ -49,4 +51,7 @@ export class PostSampleComponent implements OnInit {
     this.getPosts();
   }
 
+  public goTo(page: string): void {
+    this._router.navigateByUrl(page)
+  }
 }
