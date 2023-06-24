@@ -3,3 +3,73 @@ span{
   cursor: pointer;
   padding-left: 1rem;
 }
+
+.post-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5vh 0;
+
+  .img-container{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 40vh;
+    width: 100%;
+  }
+
+  .post-title{
+    margin: 0.5vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 12vh;
+    width: 90%;
+    max-width: 90%;
+
+    h1{
+      font-size: 6vw;
+      line-height: 1.2;
+      padding: 1vh 0;
+
+      @media (max-width:480px) {
+        font-size: 11vw;
+      }
+    }
+    hr{
+      border: 6px solid rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      width: 100%;
+    }
+  }
+
+  .body-content{
+    margin: 0.5vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    align-items: center;
+    width: 90%;
+    max-width: 90%;
+
+    .body-text{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.8;
+      font-size: 1.5vw;
+      text-align: justify;
+      width: 100%;
+
+      @media (max-width: 480px) {
+        font-size: 3.5vw;
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

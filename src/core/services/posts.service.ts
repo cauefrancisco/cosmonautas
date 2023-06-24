@@ -25,4 +25,8 @@ export class PostsService {
   public getPosts() {
     return this._afs.collection('posts').snapshotChanges();
   }
+
+  public getObjectById(id: string) {
+    return this._afs.collection('posts').doc(id).valueChanges();
+  }
 }

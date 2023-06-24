@@ -5,3 +5,18 @@
     arrow_back
   </span>
 </div>
+
+<section class="post-container">
+
+  <div class="img-container mb-2" style="background-image: url({{data?.img||imgPost}});"></div>
+
+  <div class="post-title">
+    <h1 class="mb-2">{{data?.title}}</h1>
+    <hr>
+  </div>
+
+  <div class="body-content">
+    <article [innerHTML]="data?.text" class="body-text"></article>
+  </div>
+
+</section>

@@ -9,6 +9,7 @@ import { IPostSample } from 'src/shared/interfaces/post-sample.interface';
   styleUrls: ['./post-sample.component.scss']
 })
 export class PostSampleComponent implements OnInit {
+
   public data: IPostSample[] = []
   page: number = 1;
   count: number = 0;
@@ -39,6 +40,21 @@ export class PostSampleComponent implements OnInit {
     }, (err: Error) => {
       alert(err);
     })
+  }
+
+  public maxLengthDescription(text: string): string {
+    const regexStart = new RegExp(/<img/i);
+    const regexEnd = new RegExp(/">/i);
+
+    if (regexStart.test(text.slice(0, 100)) === true) {
+      // const i = regexStart.exec(text.slice(0, 100))?.index;
+      const iEnd = regexEnd.exec(text.slice(0, 1000))?.index;
+      const start = Number(iEnd) + 2;
+      const end = Number(iEnd) + 202;
+      const description = text.slice(start, end) + '...';
+      return description
+    }
+    return text.slice(0, 100) + '...';
   }
 
   onTableDataChange(event: any) {

@@ -5,4 +5,5 @@ export interface IPostSample {
   description?: string;
   text: string;
   id?: string;
+  hour?: string;
 }
