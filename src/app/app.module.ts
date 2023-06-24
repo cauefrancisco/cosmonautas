@@ -26,6 +26,7 @@ import { ScheduleComponent } from 'src/app/pages/schedule/schedule.component';
 import { MaterialModule } from 'src/core/modules/material/material.module';
 import { environment } from 'src/environments/environment';
 import { BlogComponent } from './pages/blog/blog.component';
+import { FullPostComponent } from './pages/blog/components/full-post/full-post.component';
 import { HeaderBlogComponent } from './pages/blog/components/header-blog/header-blog.component';
 import { PostSampleComponent } from './pages/blog/components/post-sample/post-sample.component';
 import { CreatePostComponent } from './pages/home/components/create-post/create-post.component';
@@ -46,7 +47,8 @@ import { CreatePostComponent } from './pages/home/components/create-post/create-
     CreatePostComponent,
     BlogComponent,
     HeaderBlogComponent,
-    PostSampleComponent
+    PostSampleComponent,
+    FullPostComponent
   ],
   imports: [
     BrowserModule,

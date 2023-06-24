@@ -54,4 +54,10 @@ export class PostSampleComponent implements OnInit {
   public goTo(page: string): void {
     this._router.navigateByUrl(page)
   }
+
+  public openFullPost(element: any): void {
+    const id = element.id;
+    console.log(element);
+    this._router.navigateByUrl('blog/post/' + id);
+  }
 }

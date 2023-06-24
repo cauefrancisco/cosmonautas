@@ -5,25 +5,31 @@
         currentPage: page,
         totalItems: count
       };
-  let i = index" class="row box p-2 col-xl-4 col-md-4 col-12">
+  let i = index"
+    class="row box p-2 col-xl-4 col-md-4 col-12">
+    <div class="container-sample" (click)="openFullPost(item)">
 
-    <div id="bgPost" class="img-container" style="background-image: url({{item.img||imgPost}});">
-      <!-- <img class="cover-img" src="/assets/imgs/tarot-hand.jpg" alt=""> -->
+      <div id="bgPost" class="img-container" style="background-image: url({{item.img||imgPost}});">
+        <!-- <img class="cover-img" src="/assets/imgs/tarot-hand.jpg" alt=""> -->
+      </div>
+
+      <div class="title">
+
+        <h2>{{item.title}}</h2>
+      </div>
+
+      <div class="description">
+        <p max>{{item.text}}</p>
+      </div>
+
+      <!-- <div class="w-100 mt-2">
+        <hr>
+        <span>Ler mais...</span>
+      </div> -->
+
     </div>
 
-    <div class="title">
 
-      <h2>{{item.title}}</h2>
-    </div>
-
-    <div class="description">
-      <p max>{{item.text}}</p>
-    </div>
-
-    <!-- <div class="w-100 mt-2">
-      <hr>
-      <span>Ler mais...</span>
-    </div> -->
 
 
   </article>
