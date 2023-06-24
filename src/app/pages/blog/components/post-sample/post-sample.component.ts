@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PostsService } from 'src/core/services/posts.service';
-import { IPostSample } from 'src/shared/interfaces/post-sample.interface';
+import { PostsService } from 'src/app/core/services/posts.service';
+import { IPostSample } from 'src/app/shared/interfaces/post-sample.interface';
 
 @Component({
   selector: 'app-post-sample',
@@ -13,7 +13,7 @@ export class PostSampleComponent implements OnInit {
   public data: IPostSample[] = []
   page: number = 1;
   count: number = 0;
-  tableSize: number = 6;
+  tableSize: number = 8;
   tableSizes: any = [3, 6, 9, 12];
   imgPost: string = '/assets/imgs/tarot-post.jpg';
 
@@ -21,7 +21,6 @@ export class PostSampleComponent implements OnInit {
     private _postService: PostsService,
     private _router: Router,
   ) {
-
   }
 
   ngOnInit() {
@@ -30,7 +29,6 @@ export class PostSampleComponent implements OnInit {
 
   getPosts(): void {
     this._postService.getPosts().subscribe((res) => {
-      // console.log("get posts", res);
       this.data = res.map((item: any) => {
         const resData = item.payload.doc.data();
         resData.id = item.payload.doc.id;
@@ -47,14 +45,13 @@ export class PostSampleComponent implements OnInit {
     const regexEnd = new RegExp(/">/i);
 
     if (regexStart.test(text.slice(0, 100)) === true) {
-      // const i = regexStart.exec(text.slice(0, 100))?.index;
       const iEnd = regexEnd.exec(text.slice(0, 1000))?.index;
       const start = Number(iEnd) + 2;
       const end = Number(iEnd) + 202;
-      const description = text.slice(start, end) + '...';
+      const description = text.slice(start, end) + ' [...]';
       return description
     }
-    return text.slice(0, 100) + '...';
+    return text.slice(0, 100) + ' [...]';
   }
 
   onTableDataChange(event: any) {

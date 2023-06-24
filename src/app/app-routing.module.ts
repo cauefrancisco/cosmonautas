@@ -8,6 +8,7 @@ import { FullPostComponent } from './pages/blog/components/full-post/full-post.c
 import { CreatePostComponent } from './pages/home/components/create-post/create-post.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { AuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -31,7 +32,7 @@ const routes: Routes = [
           { path: 'post/:id', component: FullPostComponent }
         ]
       },
-      { path: 'create', component: CreatePostComponent },
+      { path: 'create', component: CreatePostComponent, canActivate: [AuthGuard] },
     ]
   }
 ];

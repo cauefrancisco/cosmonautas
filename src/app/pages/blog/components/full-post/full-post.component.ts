@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PostsService } from 'src/core/services/posts.service';
+import { PostsService } from 'src/app/core/services/posts.service';
 
 @Component({
   selector: 'app-full-post',

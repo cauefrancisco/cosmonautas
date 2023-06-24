@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/core/services/auth.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,7 @@ import { AuthService } from 'src/core/services/auth.service';
 export class HeaderComponent implements OnInit {
 
   public navbar = document.getElementById("navbar");
-  public isLogged: any;
+  public isLogged!: boolean;
 
 
   constructor(
@@ -21,8 +21,8 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this._authService.currentAuthStatus.subscribe((authStatus: any) => this.isLogged = authStatus)
-    // console.log(this.isLogged, 'isLoogged')
+    this.isLogged = this._authService.isLoggedIn();
+    console.log('is logged in', this.isLogged);
   }
 
   public goTo(page: string): void {

@@ -7,23 +7,13 @@
     </div>
   </div>
 
-  <div *ngIf="!isLogged" class="login">
-    <span class="material-symbols-outlined" (click)="goTo('auth/login')">
+  <div class="login">
+    <span *ngIf="!isLogged" class="material-symbols-outlined" (click)="goTo('auth/login')">
       login
     </span>
-    <span class="material-symbols-outlined" (click)="goTo('create')">
-      add
+    <span *ngIf="isLogged" class="material-symbols-outlined" (click)="logout()">
+      logout
     </span>
   </div>
-  <div *ngIf="isLogged" class="login">
-    <span class="material-symbols-outlined" (click)="logout()">
-      done
-    </span>
-  </div>
-  <!-- <div class="login">
-    <span class="material-symbols-outlined" (click)="logout()">
-      add
-    </span>
-  </div> -->
 
 </main>

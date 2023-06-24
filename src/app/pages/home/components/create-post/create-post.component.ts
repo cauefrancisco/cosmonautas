@@ -3,7 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 import { Router } from '@angular/router';
 import moment from 'moment';
 import { Editor } from 'ngx-editor';
-import { PostsService } from 'src/core/services/posts.service';
+import { PostsService } from 'src/app/core/services/posts.service';
 
 @Component({
   selector: 'app-create-post',

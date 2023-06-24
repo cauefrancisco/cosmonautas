@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/core/services/auth.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -46,12 +46,7 @@ export class LoginComponent implements OnInit {
       password: this.F_password.value,
     }
 
-    this._authService.signInEmailAndPassword(payload).then((res: any) => {
-      if (res?.user) {
-        console.log('SUCESSO!!!!', res);
-        this._router.navigateByUrl('home');
-      }
-    }).catch((err: any) => {
+    this._authService.signInEmailAndPassword(payload).catch((err: any) => {
       console.log(`error`, err);
     })
   }

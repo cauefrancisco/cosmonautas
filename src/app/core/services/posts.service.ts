@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { IPostSample } from 'src/shared/interfaces/post-sample.interface';
+import { IPostSample } from 'src/app/shared/interfaces/post-sample.interface';
 
 
 @Injectable({
