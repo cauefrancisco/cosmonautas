@@ -81,6 +81,7 @@ export class AuthService {
       this._auth.authState.subscribe((user) => {
         if (user) {
           this._snackBar.open('Logado com sucesso!');
+          this.isLoggedIn();
           this._router.navigateByUrl('home');
         }
       });

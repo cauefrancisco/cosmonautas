@@ -60,14 +60,15 @@ export class CreatePostComponent implements OnInit, OnDestroy {
       title: String(this.F_title.value),
       text: String(this.F_content.value),
       description: String(this.F_content.value).slice(0, 25),
-      hour: moment().format(),
+      date: moment().format(),
       img: String(this.F_img.value),
     }
     this._postService.createPost(payload).then((res) => {
       console.log('result create', res);
       console.log('id', res.id);
       console.log('getByid of new post', this._postService.getObjectById(res.id));
-
+      this._postService.getPosts();
+      this._router.navigateByUrl('blog');
     });
 
   }

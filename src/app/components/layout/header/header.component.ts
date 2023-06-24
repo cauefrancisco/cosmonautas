@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 
@@ -7,9 +7,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
-
-  public navbar = document.getElementById("navbar");
+export class HeaderComponent implements OnInit, DoCheck {
   public isLogged!: boolean;
 
 
@@ -17,12 +15,15 @@ export class HeaderComponent implements OnInit {
     private _router: Router,
     private _authService: AuthService,
   ) {
-    this.navbar = document.getElementById("navbar");
   }
 
   ngOnInit() {
     this.isLogged = this._authService.isLoggedIn();
     console.log('is logged in', this.isLogged);
+  }
+
+  ngDoCheck() {
+    this.isLogged = this._authService.isLoggedIn();
   }
 
   public goTo(page: string): void {
@@ -31,5 +32,6 @@ export class HeaderComponent implements OnInit {
 
   public logout() {
     this._authService.logout();
+    this.isLogged;
   }
 }

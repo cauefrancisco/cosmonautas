@@ -8,10 +8,10 @@
   </div>
 
   <div class="login">
-    <span *ngIf="!isLogged" class="material-symbols-outlined" (click)="goTo('auth/login')">
+    <span [matTooltip]="'Entrar'" *ngIf="!isLogged" class="material-symbols-outlined" (click)="goTo('auth/login')">
       login
     </span>
-    <span *ngIf="isLogged" class="material-symbols-outlined" (click)="logout()">
+    <span [matTooltip]="'Sair'" *ngIf="isLogged" class="material-symbols-outlined" (click)="logout()">
       logout
     </span>
   </div>

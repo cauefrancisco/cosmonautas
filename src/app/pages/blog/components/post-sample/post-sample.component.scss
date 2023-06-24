@@ -22,7 +22,6 @@
   border-radius: 10px;
   // border: 1px solid black;
   text-align: center;
-  min-height: 57vh;
   max-height: 100vh;
   padding: 0 !important;
   box-shadow: 2px 2px 20px 1px  rgba(0, 0, 0, 0.5);
@@ -55,6 +54,14 @@
     min-height: 12vh;
     margin-top: 1rem;
 
+    .date{
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      margin-top: 1rem;
+      width: 90%;
+    }
+
     hr{
       border: 6px solid rgba(0, 0, 0, 0.5);
       border-radius: 10px;
@@ -80,11 +87,5 @@
       padding: 0 0.5rem;
     }  
 
-  }
- 
-  span{
-    top: 0;
-    cursor: pointer;
-    padding: 1vh;
   }
 }
