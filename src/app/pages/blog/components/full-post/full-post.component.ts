@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth.service';
 import { PostsService } from 'src/app/core/services/posts.service';
 
 @Component({
@@ -8,15 +9,16 @@ import { PostsService } from 'src/app/core/services/posts.service';
   styleUrls: ['./full-post.component.scss']
 })
 export class FullPostComponent implements OnInit, AfterViewInit {
-  @ViewChild('article') artcile!: HTMLElement;
   public postId!: string;
   public data!: any;
   public imgPost: string = '/assets/imgs/tarot-post.jpg';
+  public isLogged!: boolean;
 
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _router: Router,
     private _postsService: PostsService,
+    private _authService: AuthService,
   ) {
   }
 
@@ -29,15 +31,19 @@ export class FullPostComponent implements OnInit, AfterViewInit {
       console.log("res getObjectById", res);
       this.data = res;
     })
+    this.isLogged = this._authService.isLoggedIn();
+    console.log('is logged in', this.isLogged);
   }
 
   ngAfterViewInit() {
-    console.log('article', this.artcile.innerHTML)
 
   }
 
-  public goBack(): void {
-    this._router.navigateByUrl('blog');
+  public goTo(page: string, id?: string): void {
+    this._router.navigateByUrl(page);
   }
 
+  public onEditPost(): void {
+    this._router.navigateByUrl('blog/edit/' + this.postId);
+  }
 }

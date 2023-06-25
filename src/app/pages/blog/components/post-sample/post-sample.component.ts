@@ -27,7 +27,7 @@ export class PostSampleComponent implements OnInit {
     this.getPosts();
   }
 
-  getPosts(): void {
+  public getPosts(): void {
     this._postService.getPosts().subscribe((res) => {
       this.data = res.map((item: any) => {
         const resData = item.payload.doc.data();

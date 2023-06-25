@@ -1,7 +1,7 @@
 <main>
   <form [formGroup]="form">
 
-    <h1 class="mb-3">Criar post</h1>
+    <h1 class="mb-3">{{!isEditionMode ? 'Criar post' : 'Editar post'}}</h1>
 
     <div class="row container-login">
 
@@ -29,11 +29,15 @@
   <div class="row mt-3 w-25">
 
     <div class="col-xl-6 col-md-6 col-12 p-1">
-      <button class="w-100 btn-back" (click)="goTo('home')">Voltar</button>
+      <button class="w-100 btn-back" (click)="goTo('blog')">Voltar</button>
     </div>
 
-    <div class="col-xl-6 col-md-6 col-12 p-1">
-      <button type="button" class="w-100 btn-confirm" (click)="createPost()">Confirmar</button>
+    <div *ngIf="!postId" class="col-xl-6 col-md-6 col-12 p-1">
+      <button type="button" class="w-100 btn-confirm" (click)="createPost()">Publicar</button>
+    </div>
+
+    <div *ngIf="postId" class="col-xl-6 col-md-6 col-12 p-1">
+      <button type="button" class="w-100 btn-confirm" (click)="updatePost()">Editar</button>
     </div>
 
   </div>

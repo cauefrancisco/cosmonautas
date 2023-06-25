@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { GoogleAuthProvider, User } from 'firebase/auth';
+import { FeedbackModalComponent } from 'src/app/components/modals/feedback-modal/feedback-modal.component';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +21,7 @@ export class AuthService {
     public afs: AngularFirestore,
     private _router: Router,
     private _snackBar: MatSnackBar,
+    public dialog: MatDialog,
   ) {
     this._auth.authState.subscribe((user) => {
       if (user) {
@@ -80,7 +83,12 @@ export class AuthService {
       this.SetUserData(result.user);
       this._auth.authState.subscribe((user) => {
         if (user) {
-          this._snackBar.open('Logado com sucesso!');
+          this.dialog.open(FeedbackModalComponent, {
+            data: {
+              title: 'Logado com sucesso!',
+            }
+          });
+          // this._snackBar.open('Logado com sucesso!');
           this.isLoggedIn();
           this._router.navigateByUrl('home');
         }

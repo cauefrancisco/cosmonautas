@@ -25,11 +25,12 @@ import { HomeComponent } from 'src/app/pages/home/home.component';
 import { LoginComponent } from 'src/app/pages/login/login.component';
 import { ScheduleComponent } from 'src/app/pages/schedule/schedule.component';
 import { environment } from 'src/environments/environment';
+import { FeedbackModalComponent } from './components/modals/feedback-modal/feedback-modal.component';
 import { BlogComponent } from './pages/blog/blog.component';
+import { CreatePostComponent } from './pages/blog/components/create-post/create-post.component';
 import { FullPostComponent } from './pages/blog/components/full-post/full-post.component';
 import { HeaderBlogComponent } from './pages/blog/components/header-blog/header-blog.component';
 import { PostSampleComponent } from './pages/blog/components/post-sample/post-sample.component';
-import { CreatePostComponent } from './pages/home/components/create-post/create-post.component';
 import { MarkdownPipe } from './shared/pipes/markdown.pipe';
 
 
@@ -51,6 +52,7 @@ import { MarkdownPipe } from './shared/pipes/markdown.pipe';
     PostSampleComponent,
     FullPostComponent,
     MarkdownPipe,
+    FeedbackModalComponent,
 
   ],
   imports: [

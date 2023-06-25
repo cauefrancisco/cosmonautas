@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
     private _formBuilder: FormBuilder,
     private _router: Router,
     private _authService: AuthService,
+    public dialog: MatDialog,
   ) {
     this.form = this._formBuilder.group({
       email: [null, [Validators.required]],
