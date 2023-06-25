@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   public form: FormGroup;
   public formError: any;
   public loggedIn!: boolean;
+  public hide: boolean = true;
 
   constructor(
     private _formBuilder: FormBuilder,

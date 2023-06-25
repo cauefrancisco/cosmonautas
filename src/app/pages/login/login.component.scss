@@ -8,6 +8,10 @@ main{
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 80%;
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 }
 
 form{
@@ -15,27 +19,41 @@ form{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 40%;
+  @media (max-width: 480px) {
+    width: 80%;
+  }
 }
 
 .container-login{
   display: flex;
   justify-content: center;
   align-items: center;
-  // width: 45vw;
+  width: 100%;
+}
+
+.btn-container{
+  width: 40%;
+  @media (max-width: 480px) {
+    width: 80%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 .btn-confirm{
   height: 6vh;
-    border-radius: 4px;
-    color: white;
-    background: black;
-    border: none;
+  border-radius: 5px;
+  color: black;
+  /* background: black; */
+  background: rgba(0, 170, 255, 0.5);
+  border: 1px solid black;
 }
 
 .btn-back{
   height: 6vh;
-    border-radius: 4px;
-    color: black;
-    background: gray;
-    border: none;
+  border-radius: 5px;
+  color: black;
+  background: transparent;
+  border: 1px solid black;
 }

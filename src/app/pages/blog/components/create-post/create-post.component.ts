@@ -40,6 +40,7 @@ export class CreatePostComponent implements OnInit, OnDestroy {
   ) {
     this.form = this._formBuilder.group({
       title: ['', [Validators.required]],
+      description: ['', [Validators.required, Validators.maxLength(150)]],
       content: ['', [Validators.required]],
       img: ['', []],
     });
@@ -48,6 +49,7 @@ export class CreatePostComponent implements OnInit, OnDestroy {
   }
 
   public get F_title(): AbstractControl { return this.form.get('title') as AbstractControl; }
+  public get F_descripition(): AbstractControl { return this.form.get('descripition') as AbstractControl; }
   public get F_content(): AbstractControl { return this.form.get('content') as AbstractControl; }
   public get F_img(): AbstractControl { return this.form.get('img') as AbstractControl; }
 

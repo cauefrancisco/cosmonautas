@@ -31,6 +31,7 @@ import { CreatePostComponent } from './pages/blog/components/create-post/create-
 import { FullPostComponent } from './pages/blog/components/full-post/full-post.component';
 import { HeaderBlogComponent } from './pages/blog/components/header-blog/header-blog.component';
 import { PostSampleComponent } from './pages/blog/components/post-sample/post-sample.component';
+import { SidebarComponent } from './pages/blog/components/sidebar/sidebar.component';
 import { MarkdownPipe } from './shared/pipes/markdown.pipe';
 
 
@@ -53,6 +54,7 @@ import { MarkdownPipe } from './shared/pipes/markdown.pipe';
     FullPostComponent,
     MarkdownPipe,
     FeedbackModalComponent,
+    SidebarComponent
 
   ],
   imports: [

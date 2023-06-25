@@ -17,7 +17,11 @@ export class FeedbackModalComponent implements OnInit {
   }
 
   public close(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(false);
+  }
+
+  public confirm() {
+    this.dialogRef.close(true);
   }
 
 }

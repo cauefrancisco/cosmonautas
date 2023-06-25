@@ -1,13 +1,20 @@
 <main class="modal-container">
-  <section class="content-box">
-    <h2 class="mt-3">{{data?.title}}</h2>
+
+  <h2 class="mt-3">{{data?.title}}</h2>
+
+  <section class="content-box mt-2">
     <div class="info">
-      <p class="mt-3">{{data?.text}}</p>
+      <p>{{data?.text}}</p>
     </div>
   </section>
 
-  <div class="col-12 mt-3 mb-3 p-1 w-100">
+  <div *ngIf="!data?.deletePost" class="col-12 mt-3 mb-3 p-1 w-100">
     <button class="w-100 btn-confirm" (click)="close()">Fechar</button>
+  </div>
+
+  <div *ngIf="data?.deletePost" class="col-12 mt-3 mb-3 p-1 w-100 btn-delete-container">
+    <button class="col-6 btn-confirm" (click)="close()">Cancelar</button>
+    <button class="col-6 btn-confirm" (click)="confirm()">Confirmar</button>
   </div>
 
 </main>

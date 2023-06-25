@@ -23,9 +23,11 @@
 
   <div class="post-title">
     <h1 class="mb-2">{{data?.title}}</h1>
+
     <hr class="hr">
+
     <div class="actions">
-      <div class="user-info"></div>
+
       <ul class="list-icons">
         <li *ngIf="isLogged"><button ngif mat-mini-fab
             matTooltip="Editar"
@@ -35,7 +37,7 @@
           </button></li>
         <li *ngIf="isLogged"><button mat-mini-fab
             matTooltip="Excluir"
-            (click)="onEditPost()"
+            (click)="deletePost()"
             class="btn-action">
             <mat-icon class="delete">delete</mat-icon>
           </button></li>
@@ -43,9 +45,15 @@
     </div>
   </div>
 
-  <div class="body-content">
-    <article #article [innerHTML]="data?.text | markdown" class="body-text"></article>
+  <div class="row body-container">
+
+    <div class="body-content col-xl-8 col-md-8 col-sm-8">
+      <article #article [innerHTML]="data?.text | markdown" class="body-text"></article>
+    </div>
+    <app-sidebar class="col-xl-4 col-md-4 col-sm-4"></app-sidebar>
+
   </div>
+
 
 </section>
 

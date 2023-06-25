@@ -8,6 +8,7 @@ main{
   align-items: center;
   justify-content: center;
   height: 100vh;
+  max-width: 80%;
 }
 
 form{
@@ -41,7 +42,7 @@ form{
 }
 
 .write{
-  max-width: 90vw;
+  // max-width: 80vw;
   min-height: 30vh;
   max-height: 60vh;
   overflow: auto;

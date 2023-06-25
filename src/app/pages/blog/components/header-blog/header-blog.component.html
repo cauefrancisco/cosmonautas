@@ -13,8 +13,8 @@
             (click)="goTo('home')">
             <mat-icon>home</mat-icon>
           </button></li>
-        <!-- <li>Arcanos</li>
-        <li>Espiritualidade</li> -->
+        <li class="nav-links" (click)="goTo('schedule')"><a>Consultas</a></li>
+        <li class="nav-links" (click)="goTo('about')"><a>Sobre</a></li>
         <li *ngIf="isLogged"><button mat-mini-fab
             matTooltip="Criar"
             (click)="goTo('blog/create')">

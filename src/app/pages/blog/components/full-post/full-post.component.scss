@@ -25,6 +25,7 @@
   .date{
     width: 80%;
     padding: 1vh 0;
+    text-align: center;
 
     span{
       font-family: 'Handlee', cursive;
@@ -49,8 +50,8 @@
     .actions{
       display: flex;
       justify-content: end;
-      gap: 2rem;
       width: 90%;
+      margin-bottom: 5vh;
 
       .list-icons{
         list-style: none;
@@ -90,15 +91,29 @@
     }
   }
 
+  .body-container{
+    max-width: 80%;
+    width: 100%;
+    @media (max-width: 480px) {
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+    }
+  }
+
  .body-content{
     margin: 0.5vh 0;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    // flex-direction: column;
+    // justify-content: center;
     text-align: justify;
     align-items: center;
-    width: 80%;
+    // width: 80%;
     max-width: 90%;
+
+    @media (max-width: 480px) {
+      width: 100%;
+    }
 
     .body-text{
       display: flex;
@@ -109,10 +124,10 @@
       width: 80%;
 
       @media (max-width: 480px) {
-        width: 95%;
+        width: 100%;
 
         .body-text{
-          width: 95%;
+          width: 100%;
         }
       }
 

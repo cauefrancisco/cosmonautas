@@ -95,13 +95,12 @@ export class AuthService {
       });
       this._router.navigateByUrl('home');
     }).catch((error: Error) => {
-      this._snackBar.open(error.message);
+      this._snackBar.open(error.message).dismissWithAction();
     });
   };
 
   public logout() {
     this._auth.signOut().then(() => {
-      console.log('deslogouu');
       localStorage.removeItem('user');
       this.isLoggedIn();
       this._router.navigateByUrl('home');
