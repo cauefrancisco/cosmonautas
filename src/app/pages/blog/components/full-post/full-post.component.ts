@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostsService } from 'src/app/core/services/posts.service';
 
@@ -7,7 +7,8 @@ import { PostsService } from 'src/app/core/services/posts.service';
   templateUrl: './full-post.component.html',
   styleUrls: ['./full-post.component.scss']
 })
-export class FullPostComponent implements OnInit {
+export class FullPostComponent implements OnInit, AfterViewInit {
+  @ViewChild('article') artcile!: HTMLElement;
   public postId!: string;
   public data!: any;
   public imgPost: string = '/assets/imgs/tarot-post.jpg';
@@ -28,6 +29,11 @@ export class FullPostComponent implements OnInit {
       console.log("res getObjectById", res);
       this.data = res;
     })
+  }
+
+  ngAfterViewInit() {
+    console.log('article', this.artcile.innerHTML)
+
   }
 
   public goBack(): void {

@@ -27,7 +27,7 @@
   </div>
 
   <div class="body-content">
-    <article [innerHTML]="data?.text" class="body-text"></article>
+    <article #article [innerHTML]="data?.text | markdown" class="body-text"></article>
   </div>
 
 </section>

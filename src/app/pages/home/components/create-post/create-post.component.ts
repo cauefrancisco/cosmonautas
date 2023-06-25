@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import moment from 'moment';
-import { Editor } from 'ngx-editor';
+import { Editor, Toolbar } from 'ngx-editor';
 import { PostsService } from 'src/app/core/services/posts.service';
 
 @Component({
@@ -16,6 +16,17 @@ export class CreatePostComponent implements OnInit, OnDestroy {
 
   public editor: Editor;
   public html!: 'Hello world';
+
+  toolbar: Toolbar = [
+    ['bold', 'italic'],
+    ['underline', 'strike'],
+    ['code', 'blockquote'],
+    ['ordered_list', 'bullet_list'],
+    [{ heading: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] }],
+    ['link', 'image'],
+    ['text_color', 'background_color'],
+    ['align_left', 'align_center', 'align_right', 'align_justify'],
+  ];
 
 
   constructor(

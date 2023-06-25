@@ -30,6 +30,7 @@ import { FullPostComponent } from './pages/blog/components/full-post/full-post.c
 import { HeaderBlogComponent } from './pages/blog/components/header-blog/header-blog.component';
 import { PostSampleComponent } from './pages/blog/components/post-sample/post-sample.component';
 import { CreatePostComponent } from './pages/home/components/create-post/create-post.component';
+import { MarkdownPipe } from './shared/pipes/markdown.pipe';
 
 
 
@@ -48,7 +49,9 @@ import { CreatePostComponent } from './pages/home/components/create-post/create-
     BlogComponent,
     HeaderBlogComponent,
     PostSampleComponent,
-    FullPostComponent
+    FullPostComponent,
+    MarkdownPipe,
+
   ],
   imports: [
     BrowserModule,
