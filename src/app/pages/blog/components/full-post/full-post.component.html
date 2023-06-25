@@ -7,7 +7,7 @@
 
   <button mat-mini-fab
     matTooltip="Home"
-    (click)="goBack()"
+    (click)="goTo('blog')"
     class="back">
     <mat-icon>arrow_back</mat-icon>
   </button>
@@ -18,12 +18,29 @@
   <div class="img-container mb-2" style="background-image: url({{data?.img||imgPost}});"></div>
 
   <div class="date">
-    <span>{{data?.date | date: 'dd/MM/yyyy, h:mm:ss a'}}</span>
+    <span>Publicado em {{data?.date | date: 'dd/MM/yyyy, h:mm:ss a'}}</span>
   </div>
 
   <div class="post-title">
     <h1 class="mb-2">{{data?.title}}</h1>
     <hr class="hr">
+    <div class="actions">
+      <div class="user-info"></div>
+      <ul class="list-icons">
+        <li *ngIf="isLogged"><button ngif mat-mini-fab
+            matTooltip="Editar"
+            (click)="onEditPost()"
+            class="btn-action">
+            <mat-icon class="edit">edit</mat-icon>
+          </button></li>
+        <li *ngIf="isLogged"><button mat-mini-fab
+            matTooltip="Excluir"
+            (click)="onEditPost()"
+            class="btn-action">
+            <mat-icon class="delete">delete</mat-icon>
+          </button></li>
+      </ul>
+    </div>
   </div>
 
   <div class="body-content">
