@@ -17,10 +17,6 @@ export class AboutComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // this._http.get<any>([JSON_DATA_FEED_URL]).subscribe(data => {
-
-    //   this.totalAngularPackages = data.total;
-    // });
 
   }
 };

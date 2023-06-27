@@ -8,7 +8,10 @@
       </span>
 
       <ul [class.is-open]="isMenuOpen">
-        <li><button mat-mini-fab
+        <span *ngIf="isMenuOpen" class="material-symbols-outlined close" (click)="toggleMenu()">
+          close
+        </span>
+        <li class="padding-isOpen"><button mat-mini-fab
             matTooltip="Home"
             (click)="goTo('home')">
             <mat-icon>home</mat-icon>

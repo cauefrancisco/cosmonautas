@@ -36,6 +36,7 @@
     background-attachment: fixed;
     background-size: cover;
     cursor: pointer;
+    box-shadow: -6px -7px 20px 4px rgba(0,0,0,0.5);
 
       &:hover {
         background-image: url('/assets/imgs/tarot-hand.jpg');
@@ -88,6 +89,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    box-shadow: 6px -7px 20px 4px rgba(0,0,0,0.5);
 
       &:hover {
         background-image: url('/assets/imgs/abstract.jpg');
@@ -144,6 +146,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    box-shadow: 1px 13px 20px 6px rgba(0,0,0,0.5);
 
     &:hover{
       background-image: url('/assets/imgs/tarot-post.jpg');

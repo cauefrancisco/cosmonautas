@@ -40,7 +40,7 @@ export class CreatePostComponent implements OnInit, OnDestroy {
   ) {
     this.form = this._formBuilder.group({
       title: ['', [Validators.required]],
-      description: ['', [Validators.required, Validators.maxLength(150)]],
+      description: ['', [Validators.required]],
       content: ['', [Validators.required]],
       img: ['', []],
     });

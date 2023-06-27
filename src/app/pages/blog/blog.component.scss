@@ -18,7 +18,11 @@ app-post-sample{
   align-items: center;
   text-align: center;
   hr{
-    border: 6px solid rgba(0,0,0,.5);
+    border: 6px solid rgba(0,0,0,0.2);
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: -2px 6px 20px 4px rgba(0,0,0,0.5);
+    border: 6px solid rgba(0,0,0,0.5);
     border-radius: 10px;
     width: 90%;
   }
