@@ -1,0 +1,37 @@
+.modal-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 40vh;
+  min-height: 35vh;
+  padding: 2rem;
+
+  .content-box{
+    display: flex;
+    flex-direction: column;
+    min-height: 25vh;
+    text-align: center;
+    justify-content: center;
+
+    .info{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .btn-confirm{
+    height: 6vh;
+    border-radius: 4px;
+    color: black;
+    background: white;
+    border: 1px solid black;
+    box-shadow: 1px 1px 2px black;
+  }
+
+  .btn-delete-container{
+    display: flex;
+    gap: 0.5rem;
+  }
+}

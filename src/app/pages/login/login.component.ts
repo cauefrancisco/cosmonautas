@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/core/services/auth.service';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -13,11 +14,13 @@ export class LoginComponent implements OnInit {
   public form: FormGroup;
   public formError: any;
   public loggedIn!: boolean;
+  public hide: boolean = true;
 
   constructor(
     private _formBuilder: FormBuilder,
     private _router: Router,
     private _authService: AuthService,
+    public dialog: MatDialog,
   ) {
     this.form = this._formBuilder.group({
       email: [null, [Validators.required]],
@@ -46,12 +49,7 @@ export class LoginComponent implements OnInit {
       password: this.F_password.value,
     }
 
-    this._authService.signInEmailAndPassword(payload).then((res: any) => {
-      if (res?.user) {
-        console.log('SUCESSO!!!!', res);
-        this._router.navigateByUrl('home');
-      }
-    }).catch((err: any) => {
+    this._authService.signInEmailAndPassword(payload).catch((err: any) => {
       console.log(`error`, err);
     })
   }

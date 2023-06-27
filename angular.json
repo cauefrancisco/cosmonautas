@@ -43,7 +43,11 @@
                   "with": "src/environments/environment-dev.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": {
+                "fonts": false,
+                "styles": true,
+                "scripts": true
+              },
               "outputHashing": "all",
               "sourceMap": true,
               "namedChunks": true,

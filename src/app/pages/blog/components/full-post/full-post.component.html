@@ -1,0 +1,62 @@
+<app-header-blog></app-header-blog>
+
+<div class="d-flex justify-content-start back-container">
+  <!-- <span class="material-symbols-outlined back" (click)="goBack()">
+    arrow_back
+  </span> -->
+
+  <button mat-mini-fab
+    matTooltip="Home"
+    (click)="goTo('blog')"
+    class="back">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+</div>
+
+<section class="post-container">
+
+  <div class="img-container mb-2" style="background-image: url({{data?.img||imgPost}});"></div>
+
+  <div class="date">
+    <span>Publicado em {{data?.date | date: 'dd/MM/yyyy, h:mm:ss a'}}</span>
+  </div>
+
+  <div class="post-title">
+    <h1 class="mb-2">{{data?.title}}</h1>
+
+    <hr class="hr">
+
+    <div class="actions">
+
+      <ul class="list-icons">
+        <li *ngIf="isLogged"><button ngif mat-mini-fab
+            matTooltip="Editar"
+            (click)="onEditPost()"
+            class="btn-action">
+            <mat-icon class="edit">edit</mat-icon>
+          </button></li>
+        <li *ngIf="isLogged"><button mat-mini-fab
+            matTooltip="Excluir"
+            (click)="deletePost()"
+            class="btn-action">
+            <mat-icon class="delete">delete</mat-icon>
+          </button></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row body-container">
+
+    <div class="body-content col-xl-8 col-md-8 col-sm-8">
+      <article #article [innerHTML]="data?.text | markdown" class="body-text"></article>
+    </div>
+    <app-sidebar class="col-xl-4 col-md-4 col-sm-4"></app-sidebar>
+
+  </div>
+
+
+</section>
+
+<hr class="hr">
+
+<!-- <app-post-sample></app-post-sample> -->

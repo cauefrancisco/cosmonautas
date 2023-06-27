@@ -4,13 +4,16 @@ import { MainLayoutComponent } from 'src/app/components/layout/main-layout/main-
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BlogComponent } from './pages/blog/blog.component';
-import { CreatePostComponent } from './pages/home/components/create-post/create-post.component';
+import { CreatePostComponent } from './pages/blog/components/create-post/create-post.component';
+import { FullPostComponent } from './pages/blog/components/full-post/full-post.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ScheduleComponent } from './pages/schedule/schedule.component';
+import { AuthGuard } from './shared/guard/auth.guard';
 
 const routes: Routes = [
   {
     path: 'auth',
+    component: MainLayoutComponent,
     children: [
       { path: 'login', component: LoginComponent }
     ]
@@ -23,8 +26,15 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'schedule', component: ScheduleComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'blog', component: BlogComponent },
-      { path: 'create', component: CreatePostComponent },
+      {
+        path: 'blog',
+        children: [
+          { path: '', component: BlogComponent },
+          { path: 'post/:id', component: FullPostComponent },
+          { path: 'create', component: CreatePostComponent, canActivate: [AuthGuard] },
+          { path: 'edit/:id', component: CreatePostComponent, canActivate: [AuthGuard] }
+        ]
+      },
     ]
   }
 ];

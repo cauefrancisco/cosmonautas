@@ -1,0 +1,102 @@
+@import '/src/styles/main.scss';
+
+  .menu-header{
+    width: 100%;
+    // margin-top: 5vh;
+
+    .menu-content{
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      margin: 0 5vw;
+
+      @media (max-width: 480px) {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        padding: 1rem 0;
+        margin: 0 !important;
+        gap: 1vw;
+        justify-content: space-between;
+        list-style: none;
+      }
+
+      .hamburger{
+        position: relative;
+        /* z-index: -1; */
+        left: -1000000px;
+
+        @media (max-width: 480px) {
+         position: static;
+         font-size: 2rem;
+         margin-left: 0.5rem;
+        }
+      }
+
+      ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1vw;
+        justify-content: space-evenly;
+        list-style: none;
+
+        .nav-links{
+          cursor: pointer;
+          padding-bottom: 0.8rem;
+          margin-top: 1rem;
+
+          a{
+            font-family: 'Handlee', cursive;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 1.2rem;
+          }
+
+          &:hover{
+            border-bottom: 1px solid $sweet-blue;
+          }
+        }
+
+        .close{
+          position: relative;
+          right: 100000%;
+          @media (max-width: 480px) {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            padding: 1rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+         display: none;
+
+         &.is-open{
+          display: block;
+          position: fixed;
+          top: 0;
+          margin: 0.5vh 0;
+          padding: 1rem;
+          background: white;
+          height: 200%;
+          width: 75vw;
+          z-index: 2;
+
+          .padding-isOpen{
+            margin-top: 3rem;
+          }
+
+            li{
+              padding: 1rem;
+              border-bottom: 1px solid $sweet-blue;
+            }
+         }
+        }
+      }
+    }
+    
+  }

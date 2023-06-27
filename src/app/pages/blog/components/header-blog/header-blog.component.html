@@ -1,0 +1,31 @@
+<section class="menu-header">
+  <div class="row menu-content">
+
+    <div class="col-xl-12 col-md-12 col-12">
+
+      <span class="material-symbols-outlined hamburger" (click)="toggleMenu()">
+        {{ isMenuOpen ? 'close' : 'menu' }}
+      </span>
+
+      <ul [class.is-open]="isMenuOpen">
+        <span *ngIf="isMenuOpen" class="material-symbols-outlined close" (click)="toggleMenu()">
+          close
+        </span>
+        <li class="padding-isOpen"><button mat-mini-fab
+            matTooltip="Home"
+            (click)="goTo('home')">
+            <mat-icon>home</mat-icon>
+          </button></li>
+        <li class="nav-links" (click)="goTo('schedule')"><a>Consultas</a></li>
+        <li class="nav-links" (click)="goTo('about')"><a>Sobre</a></li>
+        <li *ngIf="isLogged"><button mat-mini-fab
+            matTooltip="Criar"
+            (click)="goTo('blog/create')">
+            <mat-icon>create</mat-icon>
+          </button></li>
+      </ul>
+
+    </div>
+
+  </div>
+</section>

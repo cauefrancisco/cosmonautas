@@ -2,10 +2,27 @@
 @import './styles/main.scss';
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-htm, body{
+
+html, 
+body{
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Shadows Into Light', cursive, "Helvetica Neue", sans-serif;
+}
 
+.mat-h1, .mat-headline-5, .mat-typography .mat-h1, .mat-typography .mat-headline-5, .mat-typography h1,
+.mat-h2, .mat-headline-6, .mat-typography .mat-h2, .mat-typography .mat-headline-6, .mat-typography h2 {
+  letter-spacing: 2px;
+  font-weight: 700;
+  // font-family: 'Indie Flower', cursive;
+  font-family: 'Handlee', cursive;
+  margin: 0;
+}
+
+p{
+  letter-spacing: 2px;
+  line-height: 2;
+  font-weight: 600;
+  font-family: 'Handlee', cursive;
 }

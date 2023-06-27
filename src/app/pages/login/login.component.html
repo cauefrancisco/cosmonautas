@@ -11,17 +11,26 @@
         <mat-error *ngIf="F_email.invalid">{{getErrorMessage()}}</mat-error>
       </mat-form-field>
 
-      <mat-form-field class="col-xl-12 col-md-12 col-12">
+      <!-- <mat-form-field class="col-xl-12 col-md-12 col-12">
         <mat-label>Senha</mat-label>
         <input matInput placeholder="Abc123" formControlName="password">
         <mat-error *ngIf="F_password.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field> -->
+
+      <mat-form-field>
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
       </mat-form-field>
+
 
     </div>
 
   </form>
 
-  <div class="row mt-3 w-25">
+  <div class="row mt-3 btn-container">
 
     <div class="col-xl-6 col-md-6 col-12 p-1">
       <button class="w-100 btn-back" (click)="goToLogin('home')">Voltar</button>

@@ -16,4 +16,5 @@
 "javascript.updateImportsOnFileMove.enabled": "always",
 "git.confirmSync": false,
 "window.zoomLevel": 1,
+"angular.enable-strict-mode-prompt": false,
 }

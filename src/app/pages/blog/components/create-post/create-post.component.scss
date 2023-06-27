@@ -1,0 +1,49 @@
+@import '/src/styles/main.scss';
+
+main{
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  max-width: 80%;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90vw;
+}
+
+.btn-confirm{
+  height: 6vh;
+    border-radius: 4px;
+    color: white;
+    background: black;
+    border: none;
+}
+
+.btn-back{
+  height: 6vh;
+    border-radius: 4px;
+    color: black;
+    background: gray;
+    border: none;
+}
+
+.write{
+  // max-width: 80vw;
+  min-height: 30vh;
+  max-height: 60vh;
+  overflow: auto;
+}

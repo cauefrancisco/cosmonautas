@@ -1,0 +1,145 @@
+@import '/src/styles/main.scss';
+
+.back-container{
+  padding: 0 1rem;
+  .back{
+    position: fixed;
+    cursor: pointer;
+  }
+}
+
+.post-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5vh 0;
+
+  .img-container{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 40vh;
+    width: 100%;
+  }
+
+  .date{
+    width: 80%;
+    padding: 1vh 0;
+    text-align: center;
+
+    span{
+      font-family: 'Handlee', cursive;
+    }
+
+    @media (max-width: 480px) {
+      text-align: center;
+    }
+  }
+
+  .post-title{
+    margin: 0.5vh 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 12vh;
+    width: 80%;
+    max-width: 90%;
+
+    .actions{
+      display: flex;
+      justify-content: end;
+      width: 90%;
+      margin-bottom: 5vh;
+
+      .list-icons{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        
+        li{
+          margin: 0.5rem;
+
+          .btn-action{
+            background-color: white;
+            .delete{
+              color: red;
+            }
+            .edit{
+              color: $sweet-blue;
+            }
+          }
+        }
+      }
+    }
+
+    h1{
+      font-size: 4vw;
+      line-height: 1.2;
+      padding: 4vh 0;
+
+      @media (max-width:480px) {
+        font-size: 11vw;
+      }
+    }
+    .hr{
+      border: 6px solid rgba(0,0,0,.2);
+      border-radius: 10px;
+      width: 100%;
+      box-shadow: -2px 6px 20px 4px rgb(0,0,0);
+    }
+  }
+
+  .body-container{
+    width: 90%;
+    @media (max-width: 480px) {
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+ .body-content{
+    display: flex;
+    text-align: justify;
+
+
+    @media (max-width: 480px) {
+      width: 100%;
+    }
+
+    .body-text{
+      display: flex;
+      flex-direction: column;
+      line-height: 1.8;
+      font-size: 1rem;
+      text-align: justify;
+      width: 90%;
+      padding: 2vw;
+      // box-shadow: -17px -11px 20px 0px rgba(0,0,0,0.5);
+
+      @media (max-width: 480px) {
+        box-shadow: unset;
+        width: 100%;
+      }
+
+     ::ng-deep p{
+        img{
+          max-width: 100% !important;
+
+        }
+      }
+
+      @media (max-width: 480px) {
+        font-size: 3.5vw;
+       ::ng-deep p{
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
