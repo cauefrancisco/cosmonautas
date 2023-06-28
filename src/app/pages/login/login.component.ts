@@ -50,7 +50,6 @@ export class LoginComponent implements OnInit {
     }
 
     this._authService.signInEmailAndPassword(payload).catch((err: any) => {
-      console.log(`error`, err);
     })
   }
 

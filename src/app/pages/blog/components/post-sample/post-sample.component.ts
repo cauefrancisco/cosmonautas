@@ -34,7 +34,6 @@ export class PostSampleComponent implements OnInit {
         resData.id = item.payload.doc.id;
         return resData;
       });
-      console.log("get posts", this.data);
     }, (err: Error) => {
       alert(err);
     })
@@ -70,7 +69,6 @@ export class PostSampleComponent implements OnInit {
 
   public openFullPost(element: any): void {
     const id = element.id;
-    console.log(element);
     this._router.navigateByUrl('blog/post/' + id);
   }
 }

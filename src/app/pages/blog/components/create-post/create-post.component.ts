@@ -56,8 +56,6 @@ export class CreatePostComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this._activatedRoute.params.subscribe(params => {
       this.postId = params['id'];
-      console.log('post id', params['id']);
-      console.log('params', params);
       if (this.postId) {
         this.isEditionMode = true;
         this.setValueOnEdit();
@@ -75,7 +73,6 @@ export class CreatePostComponent implements OnInit, OnDestroy {
       return
     }
     this._postService.getObjectById(this.postId).subscribe((result) => {
-      console.log(result);
       this.F_title.setValue(result?.title);
       this.F_content.setValue(result?.text);
     })

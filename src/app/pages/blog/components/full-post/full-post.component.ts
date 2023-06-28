@@ -29,15 +29,12 @@ export class FullPostComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this._activatedRoute.params.subscribe(params => {
-      console.log('post id', params['id']);
       this.postId = params['id'];
     });
     this._postsService.getObjectById(this.postId).subscribe(res => {
-      console.log("res getObjectById", res);
       this.data = res;
     })
     this.isLogged = this._authService.isLoggedIn();
-    console.log('is logged in', this.isLogged);
   }
 
   ngAfterViewInit() {
