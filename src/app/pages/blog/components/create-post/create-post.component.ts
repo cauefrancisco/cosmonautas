@@ -19,6 +19,7 @@ export class CreatePostComponent implements OnInit, OnDestroy {
   public postId!: string;
   public editor: Editor;
   public html!: 'Hello world';
+  public selectedFile!: File;
 
   toolbar: Toolbar = [
     ['bold', 'italic'],
@@ -49,7 +50,7 @@ export class CreatePostComponent implements OnInit, OnDestroy {
   }
 
   public get F_title(): AbstractControl { return this.form.get('title') as AbstractControl; }
-  public get F_descripition(): AbstractControl { return this.form.get('descripition') as AbstractControl; }
+  public get F_description(): AbstractControl { return this.form.get('description') as AbstractControl; }
   public get F_content(): AbstractControl { return this.form.get('content') as AbstractControl; }
   public get F_img(): AbstractControl { return this.form.get('img') as AbstractControl; }
 
@@ -73,8 +74,12 @@ export class CreatePostComponent implements OnInit, OnDestroy {
       return
     }
     this._postService.getObjectById(this.postId).subscribe((result) => {
+      console.log(result);
       this.F_title.setValue(result?.title);
       this.F_content.setValue(result?.text);
+      this.F_img.setValue(result?.img);
+      this.F_description.setValue(result?.description);
+      console.log(typeof (result?.text));
     })
   }
 
@@ -88,10 +93,13 @@ export class CreatePostComponent implements OnInit, OnDestroy {
       return;
     }
 
+    // const uploadData = new FormData();
+    // uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
+
     const payload = {
       title: String(this.F_title.value),
       text: String(this.F_content.value),
-      description: String(this.F_content.value).slice(0, 25),
+      description: String(this.F_description.value),
       date: moment().format(),
       img: String(this.F_img.value),
     }
@@ -115,6 +123,17 @@ export class CreatePostComponent implements OnInit, OnDestroy {
 
   }
 
+  public onFileChanged(event: any) {
+    this.selectedFile = event.target.files[0];
+    console.log('file', this.selectedFile);
+    this.F_img.setValue(this.selectedFile.name);
+  }
+
+  public onUpload() {
+    // upload code goes here
+    console.log('file', this.selectedFile);
+  }
+
   public updatePost() {
     if (this.form.invalid) {
       return;
@@ -122,7 +141,7 @@ export class CreatePostComponent implements OnInit, OnDestroy {
     const payload = {
       title: String(this.F_title.value),
       text: String(this.F_content.value),
-      description: String(this.F_content.value).slice(0, 25),
+      description: String(this.F_description.value),
       img: String(this.F_img.value),
     }
     this._postService.updatePost(this.postId, payload).then((res) => {

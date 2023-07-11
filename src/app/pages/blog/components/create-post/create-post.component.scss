@@ -30,15 +30,23 @@ form{
     border-radius: 4px;
     color: white;
     background: black;
-    border: none;
+    border: 1px solid white;
 }
 
 .btn-back{
   height: 6vh;
-    border-radius: 4px;
-    color: black;
-    background: gray;
-    border: none;
+  border-radius: 4px;
+  color: black;
+  background: white;
+  border: 1px solid black;
+}
+
+.btn-file{
+  height: 2.5rem;
+  border-radius: 4px;
+  color: white;
+  background: black;
+  border: 1px solid white;
 }
 
 .write{

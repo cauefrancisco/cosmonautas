@@ -1,7 +1,8 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Editor } from 'ngx-editor';
 import { FeedbackModalComponent } from 'src/app/components/modals/feedback-modal/feedback-modal.component';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { PostsService } from 'src/app/core/services/posts.service';
@@ -11,11 +12,12 @@ import { PostsService } from 'src/app/core/services/posts.service';
   templateUrl: './full-post.component.html',
   styleUrls: ['./full-post.component.scss']
 })
-export class FullPostComponent implements OnInit, AfterViewInit {
+export class FullPostComponent implements OnInit, OnDestroy, AfterViewInit {
   public postId!: string;
   public data!: any;
   public imgPost: string = '/assets/imgs/tarot-post.jpg';
   public isLogged!: boolean;
+  public editor: Editor;
 
   constructor(
     private _activatedRoute: ActivatedRoute,
@@ -25,6 +27,7 @@ export class FullPostComponent implements OnInit, AfterViewInit {
     public dialog: MatDialog,
     public snackbarService: MatSnackBar,
   ) {
+    this.editor = new Editor();
   }
 
   ngOnInit() {
@@ -35,6 +38,11 @@ export class FullPostComponent implements OnInit, AfterViewInit {
       this.data = res;
     })
     this.isLogged = this._authService.isLoggedIn();
+  }
+
+  // make sure to destory the editor
+  ngOnDestroy(): void {
+    this.editor.destroy();
   }
 
   ngAfterViewInit() {

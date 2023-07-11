@@ -11,12 +11,20 @@
         <!-- <mat-error *ngIf="F_email.invalid">{{getErrorMessage()}}</mat-error> -->
       </mat-form-field>
 
-      <mat-form-field class="col-xl-12 col-md-12 col-10 mt-2">
+      <mat-form-field class="col-xl-12 col-md-12 col-12 mt-2">
         <mat-label>Descrição</mat-label>
         <textarea matInput formControlName="description"></textarea>
       </mat-form-field>
 
-      <div class="NgxEditor__Wrapper write col-xl-12 col-md-12 col-10">
+      <mat-form-field class="col-xl-12 col-md-12 col-12 m-0">
+        <mat-label>Imagem (url)</mat-label>
+        <input
+          formControlName="img"
+          matInput>
+        <!-- <mat-error *ngIf="F_email.invalid">{{getErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+
+      <div class="NgxEditor__Wrapper write col-xl-12 col-md-12 col-12">
         <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
         <ngx-editor formControlName="content" [editor]="editor" [ngModel]="html"></ngx-editor>
       </div>
@@ -26,7 +34,7 @@
 
   </form>
 
-  <div class="row mt-3 w-25">
+  <div class="row mt-3 w-100">
 
     <div class="col-xl-6 col-md-6 col-12 p-1">
       <button class="w-100 btn-back" (click)="goTo('blog')">Voltar</button>
